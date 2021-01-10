@@ -1,0 +1,46 @@
+{
+  "name": "michaelschwobe.com",
+  "description": "michaelschwobe.com website",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "author": "Michael Schwobe <mschwobe@gmail.com> (http://michaelschwobe.com)",
+  "repository": "github:michaelschwobe/michaelschwobe.com",
+  "scripts": {
+    "clean": "rimraf .eslintcache .next .stylelintcache out coverage storybook-static",
+    "lint": "npm-run-all --sequential lint:js lint:css",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint 'src/**/*.css'",
+    "lint:fix": "npm-run-all --sequential 'lint:js --fix' 'lint:css --fix'",
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build",
+    "export": "next export",
+    "deploy": "npm-run-all --sequential build export"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "next": "^10.0.5",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.9.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0"
+  }
+}
