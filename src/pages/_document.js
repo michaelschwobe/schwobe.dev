@@ -16,13 +16,13 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Facebook Meta Tags */}
-          <meta property="og:url" content="https://michaelschwobe.com/" />
+          <meta property="og:url" content="https://www.michaelschwobe.com/" />
           <meta property="og:type" content="profile" />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description} />
           <meta
             property="og:image"
-            content="https://michaelschwobe.com/og-image.jpg"
+            content="https://www.michaelschwobe.com/og-image.jpg"
           />
           <meta property="og:image:width" content="1280" />
           <meta property="og:image:height" content="720" />
@@ -30,12 +30,12 @@ class MyDocument extends Document {
           {/* Twitter Meta Tags */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:domain" content="michaelschwobe.com" />
-          <meta property="twitter:url" content="https://michaelschwobe.com/" />
+          <meta property="twitter:url" content="https://www.michaelschwobe.com/" />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta
             name="twitter:image"
-            content="https://michaelschwobe.com/og-image.jpg"
+            content="https://www.michaelschwobe.com/og-image.jpg"
           />
 
           {/* Favicons */}

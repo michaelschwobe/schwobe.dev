@@ -56,7 +56,7 @@ const Footer = () => (
           <a
             className="url u-url screen-reader-text"
             itemProp="url"
-            href="https://michaelschwobe.com"
+            href="https://www.michaelschwobe.com"
           >
             Website
           </a>{' '}

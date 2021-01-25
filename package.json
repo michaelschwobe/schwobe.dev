@@ -1,10 +1,10 @@
 {
   "name": "michaelschwobe.com",
-  "description": "michaelschwobe.com website",
+  "description": "https://www.michaelschwobe.com",
   "version": "0.1.0",
   "license": "MIT",
   "private": true,
-  "author": "Michael Schwobe <mschwobe@gmail.com> (https://michaelschwobe.com)",
+  "author": "Michael Schwobe <mschwobe@gmail.com> (https://www.michaelschwobe.com)",
   "repository": "github:michaelschwobe/michaelschwobe.com",
   "scripts": {
     "clean": "rimraf .eslintcache .next .stylelintcache out coverage storybook-static",
