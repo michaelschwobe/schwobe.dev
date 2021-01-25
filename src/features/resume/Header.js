@@ -18,7 +18,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   title: 'Michael Schwobe',
-  description: 'Senior Full Stack Engineer',
+  description: 'Senior Full-Stack Engineer',
 };
 
 // -----------------------------------------------------------------------------
