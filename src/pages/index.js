@@ -1,7 +1,8 @@
+import cn from 'classnames';
 import Head from 'next/head';
 
-import Header from '../features/resume/Header';
-import { title, description } from '../features/resume/shared';
+import me from '../shared/me';
+import Meta from '../shared/Meta';
 
 // -----------------------------------------------------------------------------
 
@@ -9,11 +10,50 @@ const Home = () => (
   <>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{me.siteTitle}</title>
+      <Meta
+        author={me.fullName}
+        description={me.siteDescription}
+        domain={me.domain}
+        title={me.siteTitle}
+        twitterId={me.twitterId}
+        url={me.url}
+        appName={me.fullName}
+        appColor="#30838C"
+        imgUrl={`${me.url}og-image.jpg`}
+        imgWidth={1280}
+        imgHeight={720}
+      />
+      <link
+        rel="preload"
+        href="/fonts/oswald-v35-latin-700.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="true"
+      />
+      <link
+        rel="preload"
+        href="/fonts/oswald-v35-latin-300.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="true"
+      />
+      <link
+        rel="preload"
+        href="/fonts/roboto-v20-latin-300.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="true"
+      />
+      <link rel="stylesheet" href="/resume.css" />
     </Head>
 
-    <Header />
+    <header className="header" role="banner">
+      <div className="container">
+        <h1 className="site-title">{me.fullName}</h1>
+        <p className="site-description">{me.jobTitle}</p>
+      </div>
+    </header>
 
     <main className="main" role="main">
       <section className="section section-1">
@@ -480,6 +520,96 @@ const Home = () => (
         </div>
       </section>
     </main>
+
+    <footer className="footer" role="contentinfo">
+      <div className="container">
+        <div
+          id={`${me.givenName}-${me.familyName}`}
+          className="vcard h-card"
+          itemScope
+          itemType="https://schema.org/Person"
+        >
+          <div className="fn p-name" itemProp="name">
+            <span className="given-name p-given-name" itemProp="givenName">
+              {me.givenName}
+            </span>{' '}
+            <span className="family-name p-family-name" itemProp="familyName">
+              {me.familyName}
+            </span>
+          </div>
+          <div
+            className="title job-title p-job-title p-experience screen-reader-text"
+            itemProp="jobtitle"
+          >
+            {me.jobTitle}
+          </div>
+          <div
+            className="adr h-adr screen-reader-text"
+            itemProp="address"
+            itemScope
+            itemType="https://schema.org/PostalAddress"
+          >
+            <div
+              className="street-address p-street-address"
+              itemProp="streetAddress"
+            >
+              {me.streetAddress}
+            </div>
+            <div>
+              <span className="locality p-locality" itemProp="addressLocality">
+                {me.addressLocality}
+              </span>
+              ,{' '}
+              <span className="region p-region" itemProp="addressRegion">
+                {me.addressRegion}
+              </span>{' '}
+              <span className="postal-code p-postal-code" itemProp="postalCode">
+                {me.postalCode}
+              </span>
+            </div>
+          </div>
+          <div className="email u-email" itemProp="email">
+            {me.email}
+          </div>
+          <div className="tel p-tel" itemProp="telephone">
+            {me.telephone}
+          </div>
+          <div>
+            {me.socials.map((social) => (
+              <a
+                className={cn('url u-url', {
+                  'social-icon': social.d,
+                  [`social-icon-${social.id}`]: social.d,
+                  'screen-reader-text': !social.d,
+                })}
+                itemProp="url"
+                aria-label={social.text}
+                href={social.href}
+                key={social.id}
+              >
+                {social.d ? (
+                  <svg
+                    className={`svg svg-${social.id}`}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="30"
+                    height="30"
+                    aria-describedby={`svg-title-${social.id} svg-desc-${social.id}`}
+                    role="img"
+                  >
+                    <title id={`svg-title-${social.id}`}>{social.text}</title>
+                    <desc id={`svg-desc-${social.id}`}>icon</desc>
+                    <path className="svg-path-1" d={social.d} />
+                  </svg>
+                ) : (
+                  social.text
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
   </>
 );
 

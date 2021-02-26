@@ -1,21 +1,21 @@
 import 'normalize.css';
-import '../globals.css';
+import '../global.css';
 
 import PropTypes from 'prop-types';
 
 // -----------------------------------------------------------------------------
 
-const Application = ({ Component, pageProps }) => <Component {...pageProps} />;
+const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
 
-Application.propTypes = {
+MyApp.propTypes = {
   Component: PropTypes.func.isRequired,
   pageProps: PropTypes.shape({}),
 };
 
-Application.defaultProps = {
+MyApp.defaultProps = {
   pageProps: undefined,
 };
 
 // -----------------------------------------------------------------------------
 
-export default Application;
+export default MyApp;
