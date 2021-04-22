@@ -97,8 +97,30 @@ const Home = () => (
           <div className="job">
             <div className="row">
               <div className="col-md-6">
+                <h3 className="job-title">Lead Front-End Developer</h3>
+                <div className="job-duration">April 2021&ndash;Present</div>
+                <div className="job-location">
+                  <a href="https://www.bms.com">Bristol Myers Squibb</a>{' '}
+                  &mdash; Milwaukee, WI (Remote)
+                </div>
+                <p className="job-description">
+                  Partner with scientific research teams to design, build and
+                  maintain modern front-ends for complex data-driven applications.
+                </p>
+              </div>
+              <div className="col-md-6">
+                <h4 className="job-clients-heading">Clients</h4>
+                <ul className="job-clients-list">
+                  <li>Bristol Myers Squibb</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="job">
+            <div className="row">
+              <div className="col-md-6">
                 <h3 className="job-title">Senior Full-Stack Engineer</h3>
-                <div className="job-duration">May 2018&ndash;Present</div>
+                <div className="job-duration">May 2018&ndash;April 2021</div>
                 <div className="job-location">
                   <a href="https://northwesternmutual.com">
                     Northwestern Mutual
