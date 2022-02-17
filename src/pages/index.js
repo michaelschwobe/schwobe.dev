@@ -76,9 +76,9 @@ const Home = () => (
             <div className="col-md-6">
               <h3>Interests</h3>
               <p>
-                When I’m not sitting at a computer, adrenaline sports are my
-                passion and spending as much time outdoors is my pursuit.
-                Weather permitting, I’m usually running, mountain biking,
+                When I&rsquo;m not sitting at a computer, adrenaline sports are
+                my passion and spending as much time outdoors is my pursuit.
+                Weather permitting, I&rsquo;m usually running, mountain biking,
                 longboarding, skateboarding, or snowboarding. My former stint as
                 a barista has given me an appreciation for great coffee. You
                 will otherwise be able to find me sipping a cup of fresh ground
@@ -100,12 +100,13 @@ const Home = () => (
                 <h3 className="job-title">Lead Front-End Developer</h3>
                 <div className="job-duration">April 2021&ndash;Present</div>
                 <div className="job-location">
-                  <a href="https://www.bms.com">Bristol Myers Squibb</a>{' '}
-                  &mdash; Milwaukee, WI (Remote)
+                  <a href="https://www.bms.com">Bristol Myers Squibb</a> &mdash;
+                  Milwaukee, WI (Remote)
                 </div>
                 <p className="job-description">
                   Partner with scientific research teams to design, build and
-                  maintain modern front-ends for complex data-driven applications.
+                  maintain modern front-ends for complex data-driven
+                  applications.
                 </p>
               </div>
               <div className="col-md-6">
@@ -182,7 +183,7 @@ const Home = () => (
                   Greenfield, WI
                 </div>
                 <p className="job-description">
-                  Contracted to modernize Everbrite’s current internal and
+                  Contracted to modernize Everbrite&rsquo;s current internal and
                   external software and also build any new client facing
                   applications. Responsibilities include architecting, UX/UI,
                   design, front-end code, and mentoring.
