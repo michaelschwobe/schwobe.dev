@@ -1,7 +1,7 @@
 const me = {
   givenName: 'Michael',
   familyName: 'Schwobe',
-  jobTitle: 'Lead Front-End Developer',
+  jobTitle: 'Senior Front-End Developer',
   domain: 'MichaelSchwobe.com',
   linkedinId: 'michaelschwobe',
   githubId: 'michaelschwobe',
