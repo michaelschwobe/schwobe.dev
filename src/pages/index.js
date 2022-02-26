@@ -97,28 +97,6 @@ const Home = () => (
           <div className="job">
             <div className="row">
               <div className="col-md-6">
-                <h3 className="job-title">Senior Front-End Developer</h3>
-                <div className="job-duration">February 2022&ndash;Present</div>
-                <div className="job-location">
-                  <a href="https://www.redhat.com">Red Hat</a> &mdash;
-                  Milwaukee, WI (Remote)
-                </div>
-                <p className="job-description">
-                  Contracted to build and maintain IT training &amp;
-                  certification applications.
-                </p>
-              </div>
-              <div className="col-md-6">
-                <h4 className="job-clients-heading">Clients</h4>
-                <ul className="job-clients-list">
-                  <li>Red Hat</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="job">
-            <div className="row">
-              <div className="col-md-6">
                 <h3 className="job-title">Lead Front-End Developer</h3>
                 <div className="job-duration">
                   April 2021&ndash;January 2022
