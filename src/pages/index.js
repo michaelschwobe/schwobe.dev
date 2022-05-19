@@ -97,7 +97,7 @@ const Home = () => (
           <div className="job">
             <div className="row">
               <div className="col-md-6">
-                <h3 className="job-title">Lead Front-End Developer</h3>
+                <h3 className="job-title">Lead Frontend Developer</h3>
                 <div className="job-duration">
                   April 2021&ndash;January 2022
                 </div>
@@ -146,10 +146,7 @@ const Home = () => (
           <div className="job">
             <div className="row">
               <div className="col-md-6">
-                <h3 className="job-title">
-                  Senior <span className="avoid-break">Front-End</span>{' '}
-                  Developer
-                </h3>
+                <h3 className="job-title">Senior Frontend Developer</h3>
                 <div className="job-duration">Dec 2016&ndash;May 2018</div>
                 <div className="job-location">
                   <a href="https://baderrutter.com">Bader Rutter</a> &mdash;
@@ -175,10 +172,7 @@ const Home = () => (
           <div className="job">
             <div className="row">
               <div className="col-md-6">
-                <h3 className="job-title">
-                  Senior <span className="avoid-break">Front-End</span>{' '}
-                  Developer
-                </h3>
+                <h3 className="job-title">Senior Frontend Developer</h3>
                 <div className="job-duration">May 2016&ndash;Dec 2016</div>
                 <div className="job-location">
                   <a href="https://Everbrite.com">Everbrite</a> &mdash;
@@ -205,9 +199,7 @@ const Home = () => (
           <div className="job">
             <div className="row">
               <div className="col-md-6">
-                <h3 className="job-title">
-                  <span className="avoid-break">Front-End</span> Engineer
-                </h3>
+                <h3 className="job-title">Frontend Engineer</h3>
                 <div className="job-duration">Sep 2014&ndash;May 2016</div>
                 <div className="job-location">
                   RocketLawnchair &mdash; Waukesha, WI
@@ -244,10 +236,7 @@ const Home = () => (
           <div className="job">
             <div className="row">
               <div className="col-md-6">
-                <h3 className="job-title">
-                  Senior <span className="avoid-break">Front-End</span>{' '}
-                  Developer
-                </h3>
+                <h3 className="job-title">Senior Frontend Developer</h3>
                 <div className="job-duration">Mar 2013&ndash;Sep 2014</div>
                 <div className="job-location">
                   <a href="https://7SummitsInc.com/">7Summits</a> &mdash;
@@ -285,8 +274,7 @@ const Home = () => (
             <div className="row">
               <div className="col-md-6">
                 <h3 className="job-title">
-                  Senior <span className="avoid-break">Front-End</span>{' '}
-                  Developer, Interactive Designer
+                  Senior Frontend Developer, Interactive Designer
                 </h3>
                 <div className="job-duration">Nov 2011&ndash;Mar 2013</div>
                 <div className="job-location">
@@ -338,17 +326,14 @@ const Home = () => (
           <div className="job">
             <div className="row">
               <div className="col-md-6">
-                <h3 className="job-title">
-                  Senior <span className="avoid-break">Front-End</span>{' '}
-                  Developer
-                </h3>
+                <h3 className="job-title">Senior Frontend Developer</h3>
                 <div className="job-duration">May 2006&ndash;Nov 2011</div>
                 <div className="job-location">
                   <a href="https://Laughlin.com">Laughlin Constable</a> &mdash;
                   Milwaukee, WI
                 </div>
                 <p className="job-description">
-                  As a Senior/Lead Front-End Developer, I researched, developed
+                  As a Senior/Lead Frontend Developer, I researched, developed
                   and implemented coding standards for agency-wide use. I also
                   expanded our digital staff by interviewing and training new
                   employees and facilitated collaboration among team members.
