@@ -289,6 +289,10 @@ export async function findResume() {
             status: 'Full-time',
             location: 'Onsite',
             duration: ['2018-05-14', '2021-04-01'],
+            highlights: [
+              'Created a sales app enabling financial representatives to collect, calculate, and validate data used to generate multi page PDFs which are then used to sell insurance policies to both businesses and households. Tech used: • Environment specific build-time and run-time variables (config, Docker, env-cmd, JavaScript, JSON) • GraphQL and REST APIs, static routes, logging, security, and validation middleware (Joi, Koa, Node, Newrelic) • Fetch and update data with side-effects (fetch, React class lifecycles, Redux, Redux sagas, Reselect) • Custom components and UI framework integration for (CSS modules, Sass, React) • Over 80% E2E and unit test coverage (Cypress, Enzyme, Jest) • Clean and secure code (ESLint, Prettier, Sonarcube) • Bronze certified CI/CD pipelines (Docker, GitLab, Kubernetes)',
+              'Created a scalable CMS app used to CRUD data consumed by the insurance sales app. Tech used: • Amazon DynamoDB database (configured/provisioned via Terraform) • REST API, static routes, logging, security, and validation middleware (Joi, Koa, Node, Newrelic) • Environment specific mocked server responses (config, env-cmd, msw) • Fetch, cache and update data (react-query, axios, react hooks/context) • Custom components and UI framework integration for (CSS modules, Sass, React) • 100% actual unit test coverage (jest, supertest, @testing-library/dom, @testing-library/react) • Clean and secure code (ESLint, Prettier, Sonarcube) • Comprehensive documentation (Markdown, HTML) • Silver certified CI/CD pipelines (Docker, GitLab, Kubernetes)',
+            ],
           },
         },
         {
