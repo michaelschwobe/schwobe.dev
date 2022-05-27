@@ -135,9 +135,9 @@ export const links: LinksFunction = () => [
   },
   {
     rel: 'preload',
-    href: '/images/header.jpg',
+    href: '/images/header.webp',
     as: 'image',
-    type: 'image/jpeg',
+    type: 'image/webp',
   },
 ];
 

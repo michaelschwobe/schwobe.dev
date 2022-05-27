@@ -1,4 +1,5 @@
 @font-face {
+  font-display: swap;
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 300;
@@ -6,6 +7,7 @@
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
@@ -13,6 +15,7 @@
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
@@ -474,8 +477,8 @@ li > ul {
   padding-bottom: 60px;
   color: #fff;
   background: #30838c;
-  background-image: url(/images/header.jpg);
-  background-image: url(/images/header.jpg),
+  background-image: url(/images/header.webp);
+  background-image: url(/images/header.webp),
     radial-gradient(
       ellipse farthest-corner at 55% 45%,
       #f7eec3,
