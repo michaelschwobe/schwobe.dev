@@ -1,18 +1,11 @@
-# node_modules are ignored by default
+# dependencies
+/node_modules
 
-# Testing
-/coverage
-
-# Development
-/public
-
-# Production
+# production
 /build
-/storybook-static
+/public/build
 
-# Next.js
-/.next/
-/out/
-
-# Vercel
-.vercel
+# server
+/.netlify
+/netlify/functions/server
+/server/build

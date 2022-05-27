@@ -1,45 +1,36 @@
-# For more about ignoring files, see:
-# https://help.github.com/articles/ignoring-files/
-# https://www.gitignore.io/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Dependencies
+# dependencies
 /node_modules
-/.pnp
-.pnp.js
 
-# Testing
+# testing
 /coverage
 
-# Production
+# production
 /build
-/storybook-static
+/public/build
 
-# Environments
-.env.local
-.env.test.local
-.env.development.local
-.env.production.local
+# environment
+.env
 
-# Caches
-.eslintcache
-.stylelintcache
+# caches
+/.cache
 
-# Logs
+# logs
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# IDEs
-.vscode
-*.sublime-*
+# server
+/.netlify
+/netlify/functions/server/index.js
 
-# Miscellaneous
+# ide
+/.vscode/*
+!/.vscode/settings.json
+!/.vscode/tasks.json
+!/.vscode/launch.json
+!/.vscode/extensions.json
+
+# misc
 .DS_Store
 *.pem
-
-# Next.js
-/.next/
-/out/
-
-# Vercel
-.vercel
+*.tgz

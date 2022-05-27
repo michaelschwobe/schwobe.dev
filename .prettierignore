@@ -1,18 +1,12 @@
-# node_modules are ignored by default
+# dependencies
+/node_modules
+/package-lock.json
 
-# Testing
-/coverage
-
-# Development
-/public
-
-# Production
+# production
 /build
-/storybook-static
+/public/build
 
-# Next.js
-/.next/
-/out/
-
-# Vercel
-.vercel
+# server
+/.netlify
+/netlify/functions/server
+/server/build
