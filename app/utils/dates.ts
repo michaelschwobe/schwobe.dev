@@ -34,8 +34,11 @@ export function getDurationFormatted(durationDateTime: string) {
     end: durationEnd as Date,
   });
 
+  const { years = 0, months = 0, days = 0 } = duration;
+  const monthsCeil = days >= 15 ? months + 2 : months + 1;
+
   return formatDuration(
-    { years: duration.years ?? 0, months: duration.months || 1 },
+    { years, months: monthsCeil },
     { delimiter: ', ', format: ['years', 'months'] },
   );
 }
