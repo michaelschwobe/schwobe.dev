@@ -207,25 +207,25 @@ export async function findResume() {
         ],
       },
       experiences: [
-        // {
-        //   employer: {
-        //     name: "L.L.Bean",
-        //     streetAddress: "15 Casco Street",
-        //     addressLocality: "Freeport",
-        //     addressRegion: "ME",
-        //     postalCode: "04033",
-        //     telephone: "(800) 441-5713",
-        //     url: "https://www.LLBean.com",
-        //   },
-        //   employee: {
-        //     title: "Senior Frontend Developer",
-        //     description: "TBD",
-        //     type: "Contract",
-        //     status: "Full-time",
-        //     location: "Remote",
-        //     duration: ["2022-06-06", undefined],
-        //   },
-        // },
+        {
+          employer: {
+            name: 'L.L.Bean',
+            streetAddress: '15 Casco Street',
+            addressLocality: 'Freeport',
+            addressRegion: 'ME',
+            postalCode: '04033',
+            telephone: '(800) 441-5713',
+            url: 'https://www.LLBean.com',
+          },
+          employee: {
+            title: 'Senior Frontend Developer',
+            description: '',
+            type: 'Contract',
+            status: 'Full-time',
+            location: 'Remote',
+            duration: ['2022-06-06', undefined],
+          },
+        },
         {
           employer: {
             name: 'Ameriprise Financial Services',
