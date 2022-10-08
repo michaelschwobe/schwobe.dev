@@ -16,11 +16,19 @@ export function getDurationDateTime(
     .join('/');
 }
 
-export function getDurationHyphenated(durationDateTime: string) {
+export function getDurationHyphenated(
+  durationDateTime: string,
+  isLong = false,
+) {
+  const pattern = isLong ? 'PPP' : 'MMM yyyy';
   return durationDateTime
     .split('/')
-    .map((iso) => format(parseISO(iso), 'MMM yyyy'))
-    .map((str, idx, arr) => (idx === 1 && arr[0] === arr[1] ? 'Present' : str))
+    .map((iso) => format(parseISO(iso), pattern))
+    .map((str, idx, arr) =>
+      idx === 1 && (arr[0] === arr[1] || str === format(new Date(), pattern))
+        ? 'Present'
+        : str,
+    )
     .join('–');
 }
 

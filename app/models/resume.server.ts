@@ -355,7 +355,7 @@ export async function findResume() {
             addressLocality: ' Waukesha',
             addressRegion: 'WI',
             postalCode: '53186',
-            telephone: '(262) 544-8800',
+            telephone: '',
           },
           employee: {
             title: 'Frontend Engineer',

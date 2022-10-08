@@ -112,6 +112,20 @@ li > ul {
   margin: 0.5em 0 0;
 }
 
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.25em 0.75em;
+}
+
+th {
+  padding-left: 0;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
