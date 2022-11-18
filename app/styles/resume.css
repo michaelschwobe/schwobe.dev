@@ -489,7 +489,7 @@ th {
   min-height: 80vh;
   padding-top: 10vw;
   padding-bottom: 60px;
-  color: #fff;
+  color: #fff9db;
   background: #30838c;
   background-image: url(/images/header.webp);
   background-image: url(/images/header.webp),
@@ -518,7 +518,7 @@ th {
 
 .site-title {
   margin: 0;
-  color: #fff;
+  color: inherit;
   font-weight: 700;
   font-size: 18vmin;
 }
