@@ -219,11 +219,17 @@ export async function findResume() {
           },
           employee: {
             title: 'Senior Frontend Developer',
-            description: '',
+            description:
+              'Designed, developed, and tested eCommerce website features end-to-end.',
             type: 'Contract',
             status: 'Full-time',
             location: 'Remote',
             duration: ['2022-06-06', undefined],
+            highlights: [
+              'Published npm packages to address cross-team tooling (ESLint, Husky, Jest, lint-staged, Node, Prettier, React, Storybook, TypeScript). Summary: 2 repos deprecated, 24 repos updated, 3 repos created with extensive documentation and instruction, 21098 problems before (12497 errors, 8601 warnings), 4962 problems after (0 errors, 4962 warnings)',
+              'Refactored multiple front-end focused repositories (Axios, Docker, GitHub, Jenkins, React classes and hooks, Redux, Sass, Webpack)',
+              'Developed a new REST API service that sits in between front-end applications and data services. (Axios, Docker, GitHub, Jenkins, NestJS, supertest, Swagger/OpenAPI, TypeScript)',
+            ],
           },
         },
         {
