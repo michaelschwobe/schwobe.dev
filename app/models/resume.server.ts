@@ -209,8 +209,29 @@ export async function findResume() {
       experiences: [
         {
           employer: {
+            name: 'Thrivent',
+            streetAddress: '600 Portland Ave S Suite 100',
+            addressLocality: 'Minneapolis',
+            addressRegion: 'MN',
+            postalCode: '55415',
+            telephone: '(800) 847-4836',
+            url: 'https://www.Thrivent.com',
+          },
+          employee: {
+            title: 'Lead/Senior Frontend Engineer',
+            description:
+              'Led the technical design, development, and governance of technology solutions that delivered business value across the organization while continuously improving time to market.',
+            type: 'Contract',
+            status: 'Full-time',
+            location: 'Remote',
+            duration: ['2022-12-01', undefined],
+            highlights: [],
+          },
+        },
+        {
+          employer: {
             name: 'L.L.Bean',
-            streetAddress: '15 Casco Street',
+            streetAddress: '15 Casco St',
             addressLocality: 'Freeport',
             addressRegion: 'ME',
             postalCode: '04033',
@@ -224,7 +245,7 @@ export async function findResume() {
             type: 'Contract',
             status: 'Full-time',
             location: 'Remote',
-            duration: ['2022-06-06', undefined],
+            duration: ['2022-06-06', '2022-11-30'],
             highlights: [
               'Published npm packages to address cross-team tooling (ESLint, Husky, Jest, lint-staged, Node, Prettier, React, Storybook, TypeScript). Summary: 2 repos deprecated, 24 repos updated, 3 repos created with extensive documentation and instruction, 21098 problems before (12497 errors, 8601 warnings), 4962 problems after (0 errors, 4962 warnings)',
               'Refactored multiple front-end focused repositories (Axios, Docker, GitHub, Jenkins, React classes and hooks, Redux, Sass, Webpack)',
@@ -255,7 +276,7 @@ export async function findResume() {
         {
           employer: {
             name: 'Bristol-Myers Squibb',
-            streetAddress: '430 E 29th Street',
+            streetAddress: '430 E 29th St',
             addressLocality: '14th Floor, New York',
             addressRegion: 'NY',
             postalCode: '10016',
