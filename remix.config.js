@@ -14,9 +14,12 @@ module.exports = {
 
   // publicPath: "/build/",
 
-  server: './server.js',
+  server:
+    process.env.NETLIFY || process.env.NETLIFY_LOCAL
+      ? './server.js'
+      : undefined,
 
-  // serverBuildPath: "build/index.js",
+  // serverBuildPath: ".netlify/functions-internal/server.js",
 
   serverBuildTarget: 'netlify',
 };
