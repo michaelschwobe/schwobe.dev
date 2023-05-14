@@ -1,7 +1,7 @@
+import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import cc from 'classcat';
-
+import clsx from 'clsx';
 import { findResume } from '~/models/resume.server';
 import resumeStylesUrl from '~/styles/resume.css';
 import {
@@ -10,25 +10,12 @@ import {
   getDurationHyphenated,
 } from '~/utils/dates';
 
-import type {
-  LinksFunction,
-  LoaderFunction,
-  MetaFunction,
-} from '@remix-run/node';
-import type { Resume } from '~/models/resume.server';
-
-// -----------------------------------------------------------------------------
-
-type LoaderData = Resume;
-
-// -----------------------------------------------------------------------------
-
-export const loader: LoaderFunction = async () => {
+export async function loader() {
   const resume = await findResume();
-  return json<LoaderData>(resume);
-};
+  return json(resume);
+}
 
-export const meta: MetaFunction = ({ data }: { data: LoaderData }) => {
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
   const title = `${data.fullName}, ${data.jobTitle}`;
   const description = `Resume for ${data.fullName}, a ${data.jobTitle} based out of ${data.addressLocality}, ${data.addressRegion}.`;
   const author = data.fullName;
@@ -44,36 +31,36 @@ export const meta: MetaFunction = ({ data }: { data: LoaderData }) => {
   )?.username;
   const creator = twitterUsername ? `@${twitterUsername}` : undefined;
 
-  return {
+  return [
     /* Primary */
-    title,
-    description,
-    author,
+    { title },
+    { name: 'description', content: description },
+    { name: 'author', content: author },
 
     /* App / Icon */
-    'apple-mobile-web-app-title': appName,
-    'application-name': appName,
-    'msapplication-TileColor': color,
-    'theme-color': color,
+    { name: 'apple-mobile-web-app-title', content: appName },
+    { name: 'application-name', content: appName },
+    { name: 'msapplication-TileColor', content: color },
+    { name: 'theme-color', content: color },
 
     /* Facebook / Open Graph */
-    'og:type': 'website',
-    'og:url': url,
-    'og:title': title,
-    'og:description': description,
-    'og:image': image,
-    'og:image:width': imageWidth,
-    'og:image:height': imageHeight,
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: url },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:image', content: image },
+    { property: 'og:image:width', content: imageWidth },
+    { property: 'og:image:height', content: imageHeight },
 
     /* Twitter */
-    'twitter:card': 'summary_large_image',
-    'twitter:domain': domain,
-    'twitter:url': url,
-    'twitter:title': title,
-    'twitter:description': description,
-    'twitter:creator': creator,
-    'twitter:image': image,
-  };
+    { property: 'twitter:card', content: 'summary_large_image' },
+    { property: 'twitter:domain', content: domain },
+    { property: 'twitter:url', content: url },
+    { property: 'twitter:title', content: title },
+    { property: 'twitter:description', content: description },
+    { property: 'twitter:creator', content: creator },
+    { property: 'twitter:image', content: image },
+  ];
 };
 
 export const links: LinksFunction = () => [
@@ -141,10 +128,8 @@ export const links: LinksFunction = () => [
   },
 ];
 
-// -----------------------------------------------------------------------------
-
 export default function ResumePage() {
-  const data = useLoaderData<LoaderData>();
+  const data = useLoaderData<typeof loader>();
 
   return (
     <>
@@ -376,8 +361,9 @@ export default function ResumePage() {
             <div>
               {data.socials.map((social) => (
                 <a
-                  className={cc([
-                    'url u-url',
+                  className={clsx([
+                    'url',
+                    'u-url',
                     'social-icon',
                     `social-icon-${social.id}`,
                   ])}

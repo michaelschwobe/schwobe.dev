@@ -1,32 +1,17 @@
+import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-
 import { findResume } from '~/models/resume.server';
 import resumeStylesUrl from '~/styles/resume.css';
 import { getDurationDateTime, getDurationHyphenated } from '~/utils/dates';
 
-import type {
-  LinksFunction,
-  LoaderFunction,
-  MetaFunction,
-} from '@remix-run/node';
-import type { Resume } from '~/models/resume.server';
-
-// -----------------------------------------------------------------------------
-
-type LoaderData = Resume;
-
-// -----------------------------------------------------------------------------
-
-export const loader: LoaderFunction = async () => {
+export async function loader() {
   const resume = await findResume();
-  return json<LoaderData>(resume);
-};
+  return json(resume);
+}
 
-export const meta: MetaFunction = () => {
-  return {
-    title: 'Employment History',
-  };
+export const meta: V2_MetaFunction = () => {
+  return [{ title: 'Employment History' }];
 };
 
 export const links: LinksFunction = () => [
@@ -88,10 +73,8 @@ export const links: LinksFunction = () => [
   },
 ];
 
-// -----------------------------------------------------------------------------
-
 export default function HistoryPage() {
-  const data = useLoaderData<LoaderData>();
+  const data = useLoaderData<typeof loader>();
 
   return (
     <>

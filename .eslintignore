@@ -5,6 +5,9 @@
 /build
 /public/build
 
+# cache
+/.cache
+
 # server
 /.netlify
 /netlify/functions/server

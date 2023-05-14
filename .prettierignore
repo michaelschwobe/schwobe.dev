@@ -1,10 +1,13 @@
 # dependencies
 /node_modules
-/package-lock.json
+/pnpm-lock.yaml
 
 # production
 /build
 /public/build
+
+# cache
+/.cache
 
 # server
 /.netlify

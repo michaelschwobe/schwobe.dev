@@ -1,6 +1,4 @@
-/**
- * @type {import("prettier").Config}
- */
+/** @type {import("prettier").Config} */
 module.exports = {
   singleQuote: true,
   trailingComma: 'all',

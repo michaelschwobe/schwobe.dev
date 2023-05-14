@@ -6,8 +6,6 @@ import {
   parseISO,
 } from 'date-fns';
 
-// -----------------------------------------------------------------------------
-
 export function getDurationDateTime(
   durationArray: [string, string | undefined],
 ) {
