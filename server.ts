@@ -1,7 +1,7 @@
 import * as build from '@remix-run/dev/server-build';
 import { createRequestHandler } from '@remix-run/netlify';
-import type { ServerBuild } from '@remix-run/node';
 import { installGlobals } from '@remix-run/node';
+import type { ServerBuild } from '@remix-run/server-runtime';
 
 installGlobals();
 
