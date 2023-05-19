@@ -9,41 +9,41 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "clean": "rimraf .cache/ build/ node_modules/.cache public/build/",
-    "dev": "npm-run-all -s clean validate -p dev:*",
-    "dev:remix": "remix dev",
-    "fix": "run-s \"lint -- --fix\" format",
-    "format": "prettier --ignore-unknown --write .",
-    "lint": "eslint --ext=.js,.jsx,.ts,.tsx --cache --cache-location ./node_modules/.cache/eslint .",
+    "dev": "remix dev",
     "start": "cross-env NODE_ENV=production netlify dev",
-    "typecheck": "tsc -b",
-    "validate": "run-s lint \"format -- --check --write=false\" typecheck"
-  },
-  "engines": {
-    "node": ">=14"
+    "typecheck": "tsc",
+    "clean": "rimraf .cache/ .netlify build/ public/build/",
+    "fix": "npm-run-all -s \"lint -- --fix\" \"format -- --check=false --write\"",
+    "format": "prettier . --ignore-unknown --check",
+    "lint": "eslint . --ext=.js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@netlify/functions": "^1.3.0",
-    "@remix-run/netlify": "^1.7.6",
-    "@remix-run/node": "^1.7.6",
-    "@remix-run/react": "^1.7.6",
-    "classcat": "^5.0.4",
+    "@netlify/functions": "^1.4.0",
+    "@remix-run/css-bundle": "^1.16.1",
+    "@remix-run/netlify": "^1.16.1",
+    "@remix-run/node": "^1.16.1",
+    "@remix-run/react": "^1.16.1",
+    "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
-    "date-fns": "^2.29.3",
+    "date-fns": "^2.30.0",
+    "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.7.6",
-    "@remix-run/eslint-config": "^1.7.6",
-    "@remix-run/serve": "^1.7.6",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.9",
-    "eslint": "^8.28.0",
-    "eslint-config-prettier": "^8.5.0",
+    "@remix-run/dev": "^1.16.1",
+    "@remix-run/eslint-config": "^1.16.1",
+    "@remix-run/serve": "^1.16.1",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.9.3"
+    "prettier": "^2.8.8",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
