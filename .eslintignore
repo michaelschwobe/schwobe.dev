@@ -1,8 +1,8 @@
 # dependencies
-/node_modules
+node_modules
+package-lock.json
 
 # production
-/build
 /public/build
 
 # cache
@@ -10,5 +10,3 @@
 
 # server
 /.netlify
-/netlify/functions/server
-/server/build

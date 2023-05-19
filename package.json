@@ -9,35 +9,34 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "clean": "rimraf .cache/ build/ public/build/",
-    "dev": "npm-run-all -s clean dev:remix",
-    "dev:remix": "remix dev",
-    "fix": "npm-run-all -s \"lint --fix\" \"format --check=false --write\"",
-    "format": "prettier . --ignore-unknown --check",
-    "lint": "eslint . --ext=.js,.jsx,.ts,.tsx",
+    "dev": "remix dev",
     "start": "cross-env NODE_ENV=production netlify dev",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "clean": "rimraf .cache/ .netlify build/ public/build/",
+    "fix": "npm-run-all -s \"lint -- --fix\" \"format -- --check=false --write\"",
+    "format": "prettier . --ignore-unknown --check",
+    "lint": "eslint . --ext=.js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@netlify/functions": "^1.6.0",
-    "@remix-run/css-bundle": "^1.16.0",
-    "@remix-run/netlify": "^1.16.0",
-    "@remix-run/node": "^1.16.0",
-    "@remix-run/react": "^1.16.0",
+    "@netlify/functions": "^1.4.0",
+    "@remix-run/css-bundle": "^1.16.1",
+    "@remix-run/netlify": "^1.16.1",
+    "@remix-run/node": "^1.16.1",
+    "@remix-run/react": "^1.16.1",
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
     "date-fns": "^2.30.0",
-    "isbot": "^3.6.10",
+    "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.16.0",
-    "@remix-run/eslint-config": "^1.16.0",
-    "@remix-run/serve": "^1.16.0",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "eslint": "^8.40.0",
+    "@remix-run/dev": "^1.16.1",
+    "@remix-run/eslint-config": "^1.16.1",
+    "@remix-run/serve": "^1.16.1",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.8",
@@ -45,7 +44,6 @@
     "typescript": "^5.0.4"
   },
   "engines": {
-    "node": ">=14 <17",
-    "pnpm": ">=7.13.4 <8"
+    "node": ">=14"
   }
 }

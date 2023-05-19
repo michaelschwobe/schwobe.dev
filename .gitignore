@@ -1,13 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules
 
 # testing
 /coverage
 
 # production
-/build
 /public/build
 
 # environment
@@ -21,16 +20,6 @@ npm-debug.log*
 
 # server
 /.netlify
-/netlify/functions/server/index.js
-
-# ide
-/.vscode/*
-!/.vscode/settings.json
-!/.vscode/tasks.json
-!/.vscode/launch.json
-!/.vscode/extensions.json
 
 # misc
 .DS_Store
-*.pem
-*.tgz

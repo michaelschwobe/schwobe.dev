@@ -16,17 +16,17 @@ export async function loader() {
 }
 
 export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
-  const title = `${data.fullName}, ${data.jobTitle}`;
-  const description = `Resume for ${data.fullName}, a ${data.jobTitle} based out of ${data.addressLocality}, ${data.addressRegion}.`;
-  const author = data.fullName;
-  const url = data.url;
-  const domain = data.url.replace('https://', '');
-  const appName = data.url.replace('https://', '');
-  const image = data.url.concat('/og-image.jpg');
+  const title = `${data?.fullName}, ${data?.jobTitle}`;
+  const description = `Resume for ${data?.fullName}, a ${data?.jobTitle} based out of ${data?.addressLocality}, ${data?.addressRegion}.`;
+  const author = data?.fullName;
+  const url = data?.url;
+  const domain = data?.url.replace('https://', '');
+  const appName = data?.url.replace('https://', '');
+  const image = data?.url.concat('/og-image.jpg');
   const imageWidth = '1200';
   const imageHeight = '628';
   const color = '#30838C';
-  const twitterUsername = data.socials.find(
+  const twitterUsername = data?.socials.find(
     (el) => el.id === 'twitter',
   )?.username;
   const creator = twitterUsername ? `@${twitterUsername}` : undefined;
