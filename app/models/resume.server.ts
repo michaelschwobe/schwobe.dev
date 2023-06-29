@@ -222,7 +222,7 @@ const resume = {
         type: 'Contract',
         status: 'Full-time',
         location: 'Remote',
-        duration: ['2022-12-01', undefined],
+        duration: ['2022-12-01', '2023-05-31'],
         highlights: [
           'Improved lead generation and capture by rewriting legacy applications and websites (Brightspot CMS, Cypress, GraphQL, Jest, Launch Darkly, Next.js, Nx, React Query, Styled Components, and TypeScript)',
           'Developed a new design system proof-of-concept (Class Variance Authority, React, Storybook, Tailwind CSS, and TypeScript)',
