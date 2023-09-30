@@ -37,7 +37,7 @@ export interface Resume {
     employee: {
       title: string;
       description: string;
-      type: 'Contract' | 'Salaried';
+      type: 'Contract' | 'Salaried' | 'Self-employed';
       status: 'Full-time' | 'Part-time';
       location: 'Onsite' | 'Remote';
       duration: [string, string | undefined];
@@ -135,6 +135,7 @@ const resume = {
       'Next.js',
       'Node.js',
       'NPM',
+      'Playwright',
       'PNPM',
       'PostCSS',
       'Prettier',
@@ -170,6 +171,7 @@ const resume = {
       'Confluence',
       'Create React App',
       'CSS-in-JS',
+      'Cypress',
       'DiffMerge',
       'Dropbox',
       'Electron',
@@ -225,7 +227,7 @@ const resume = {
         duration: ['2022-12-01', '2023-05-31'],
         highlights: [
           'Improved lead generation and capture by rewriting legacy applications and websites (Brightspot CMS, Cypress, GraphQL, Jest, Launch Darkly, Next.js, Nx, React Query, Styled Components, and TypeScript)',
-          'Developed a new design system proof-of-concept (Class Variance Authority, React, Storybook, Tailwind CSS, and TypeScript)',
+          'Developed a new design system proof-of-concept (Class Variance Authority, Radix, React, Storybook, Tailwind CSS, and TypeScript)',
           'Mentored and coached team members while building accessible, search engine optimized, server-side rendered applications',
         ],
       },
@@ -249,9 +251,9 @@ const resume = {
         location: 'Remote',
         duration: ['2022-06-06', '2022-11-30'],
         highlights: [
+          'Developed a new REST API service that sits in between front-end applications and data services. (Axios, Docker, GitHub, Jenkins, NestJS, supertest, Swagger/OpenAPI, TypeScript)',
           'Published npm packages to address cross-team tooling (ESLint, Husky, Jest, lint-staged, Node, Prettier, React, Storybook, TypeScript). Summary: 2 repos deprecated, 24 repos updated, 3 repos created with extensive documentation and instruction, 21098 problems before (12497 errors, 8601 warnings), 4962 problems after (0 errors, 4962 warnings)',
           'Refactored multiple front-end focused repositories (Axios, Docker, GitHub, Jenkins, React classes and hooks, Redux, Sass, Webpack)',
-          'Developed a new REST API service that sits in between front-end applications and data services. (Axios, Docker, GitHub, Jenkins, NestJS, supertest, Swagger/OpenAPI, TypeScript)',
         ],
       },
     },
@@ -313,14 +315,20 @@ const resume = {
       employee: {
         title: 'Senior Full Stack Engineer',
         description:
-          'Developed both client and server side code for form-heavy, secure, sales tools used by field representatives.',
+          'Played a pivotal role in the development of comprehensive sales tools catering to field representatives, encompassing both client and server-side code. My primary focus was on crafting a sophisticated sales application, designed to empower financial representatives in gathering, calculating, and validating data essential for generating complex multi-page PDF documents. These meticulously crafted PDFs served as instrumental assets for selling insurance policies to both businesses and households. In addition to the sales app, I also contributed to the creation of a scalable Content Management System (CMS) application. This CMS application was instrumental in facilitating the Create, Read, Update, and Delete (CRUD) operations for the data utilized by the insurance sales app, enhancing its overall efficiency and usability.',
         type: 'Salaried',
         status: 'Full-time',
         location: 'Onsite',
         duration: ['2018-05-14', '2021-04-01'],
         highlights: [
-          'Created a sales app enabling financial representatives to collect, calculate, and validate data used to generate multi page PDFs which are then used to sell insurance policies to both businesses and households. Tech used: • Environment specific build-time and run-time variables (config, Docker, env-cmd, JavaScript, JSON) • GraphQL and REST APIs, static routes, logging, security, and validation middleware (Joi, Koa, Node, Newrelic) • Fetch and update data with side-effects (fetch, React class lifecycles, Redux, Redux sagas, Reselect) • Custom components and UI framework integration for (CSS modules, Sass, React) • Over 80% E2E and unit test coverage (Cypress, Enzyme, Jest) • Clean and secure code (ESLint, Prettier, Sonarcube) • Bronze certified CI/CD pipelines (Docker, GitLab, Kubernetes)',
-          'Created a scalable CMS app used to CRUD data consumed by the insurance sales app. Tech used: • Amazon DynamoDB database (configured/provisioned via Terraform) • REST API, static routes, logging, security, and validation middleware (Joi, Koa, Node, Newrelic) • Environment specific mocked server responses (config, env-cmd, msw) • Fetch, cache and update data (react-query, axios, react hooks/context) • Custom components and UI framework integration for (CSS modules, Sass, React) • 100% actual unit test coverage (jest, supertest, @testing-library/dom, @testing-library/react) • Clean and secure code (ESLint, Prettier, Sonarcube) • Comprehensive documentation (Markdown, HTML) • Silver certified CI/CD pipelines (Docker, GitLab, Kubernetes)',
+          'Environment specific mocked server responses, build-time and run-time variables (config, Docker, env-cmd, JavaScript, JSON, Mock Service Worker)',
+          'GraphQL and REST APIs, static routes, logging, security, and validation middleware (Joi, Koa, Node, Newrelic)',
+          'Fetch and update data with side-effects (axios, fetch, react-query, React hooks/context, React class lifecycles, Redux, Redux sagas, Reselect)',
+          'Custom components and UI framework integration for (CSS modules, Sass, React)',
+          'Over 80% E2E and unit test coverage (Cypress, Enzyme, Jest)',
+          'Clean and secure code (ESLint, Prettier, Sonarcube)',
+          'Comprehensive documentation (Markdown, HTML)',
+          'Bronze certified CI/CD pipelines (Docker, GitLab, Kubernetes)',
         ],
       },
     },
@@ -349,6 +357,14 @@ const resume = {
           'The Standard',
           'Zoetis',
         ],
+        highlights: [
+          'Created a sales tool for Dow representatives to use while selling out in the field that gives them the ability to create then generate account-based PDF reports with volume, notes, and bonus tracking.',
+          'Created a tax-deferred, retirement planning savings estimator written as a portable single-page-application that was eventually zipped and sent to the client for them to reuse wherever they saw fit.',
+          'Created an offline-capable "Nitrogen Stabilizer Formulation Retailer Calculator" app — that lives within an existing DowDuPont’s Microsoft Surface app and also on their website — was built with the purpose of aiding retailers calculate overall financial savings for clients when using N-Serve or Insight branded products.',
+          'Created a single-page offline-capable "Dairy Wellness Outcomes" app — that lives within an existing Zoetis-customized version of the iPad Pitcher app — was built with the purpose of creating/reviewing/updating initiatives and scorecards for better evaluation/tracking of dairy farm progress/goals.',
+          'Created a "BRD Solutions" website that won a BBN GOLDEN BEES AWARDS 2017 for Best Website',
+          'Created a "Deader Than Dead Tour" static site generated with shared data and assets between landing pages enabling a staggered release schedule pending tour stop updates.',
+        ],
       },
     },
     {
@@ -370,6 +386,9 @@ const resume = {
         location: 'Onsite',
         duration: ['2016-05-25', '2016-12-16'],
         clients: ['CoorsLight', 'Everbrite', 'Marathon Petroleum', 'Subway'],
+        highlights: [
+          'Conceptualized and constructed a single-page application with the explicit objective of streamlining the onboarding and renewal procedures for Everbrite’s vendor and installer network. This dedicated extranet platform enables installers to log in, effortlessly manage their company’s vital information, including contacts, locations, equipment/services, and pricing rates. Additionally, installers can readily accept renewal agreements or upload new certificates.',
+        ],
       },
     },
     {
@@ -484,6 +503,37 @@ const resume = {
           'Sterling',
           'VFW',
           'WEA Trust',
+        ],
+      },
+    },
+    {
+      employer: {
+        name: 'Kunst Empire',
+        streetAddress: '3975 S Quimby Ave',
+        addressLocality: 'New Berlin',
+        addressRegion: 'WI',
+        postalCode: '53151',
+        telephone: '(920) 279-0121',
+        url: 'https://Schwobe.dev',
+      },
+      employee: {
+        title: 'Owner, Designer, Developer',
+        description: 'Freelance web design, programming, and print.',
+        type: 'Self-employed',
+        status: 'Part-time',
+        location: 'Remote',
+        duration: ['2006-01-01', '2012-12-31'],
+        clients: [
+          'Green-Tech Treecare',
+          'Stoddart Support Solutions',
+          'Libiamo Restaurant',
+          'Nessun Dorma Pub',
+          'GeoToys, LLC.',
+        ],
+        highlights: [
+          'Conceptualize, design and construct websites or print materials according to clients’ specifications.',
+          'Offer consultation services, create identity and improve branding for new and existing businesses.',
+          'Maximize website usability, readability, and searchability.',
         ],
       },
     },
