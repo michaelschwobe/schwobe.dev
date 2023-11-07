@@ -7,43 +7,47 @@
   "repository": "github:michaelschwobe/schwobe.dev",
   "private": true,
   "sideEffects": false,
+  "type": "module",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev",
-    "start": "cross-env NODE_ENV=production netlify dev",
-    "typecheck": "tsc",
-    "clean": "rimraf .cache/ .netlify build/ public/build/",
-    "fix": "npm-run-all -s \"lint -- --fix\" \"format -- --check=false --write\"",
-    "format": "prettier . --ignore-unknown --check",
-    "lint": "eslint . --ext=.js,.jsx,.ts,.tsx"
+    "build": "pnpm run redirects:enable && remix build",
+    "dev": "pnpm run redirects:disable && remix dev",
+    "start": "netlify serve",
+    "typecheck": "tsc -b",
+    "lint": "eslint --ext=.js,.jsx,.ts,.tsx .",
+    "format": "prettier --ignore-unknown --write .",
+    "clean": "rm -rf .cache && rm -rf .netlify && rm -rf build && rm -rf public/build && rm -rf node_modules",
+    "setup": "pnpm install && pnpm run build",
+    "validate": "pnpm run typecheck && pnpm run lint",
+    "redirects:enable": "shx cp .redirects public/_redirects",
+    "redirects:disable": "shx rm -f public/_redirects"
   },
   "dependencies": {
-    "@netlify/functions": "^1.4.0",
-    "@remix-run/css-bundle": "^1.16.1",
-    "@remix-run/netlify": "^1.16.1",
-    "@remix-run/node": "^1.16.1",
-    "@remix-run/react": "^1.16.1",
-    "clsx": "^1.2.1",
+    "@netlify/functions": "^2.3.0",
+    "@netlify/remix-adapter": "^2.2.0",
+    "@remix-run/css-bundle": "^2.2.0",
+    "@remix-run/node": "^2.2.0",
+    "@remix-run/react": "^2.2.0",
+    "clsx": "^2.0.0",
     "cross-env": "^7.0.3",
     "date-fns": "^2.30.0",
-    "isbot": "^3.6.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "shx": "^0.3.4"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.16.1",
-    "@remix-run/eslint-config": "^1.16.1",
-    "@remix-run/serve": "^1.16.1",
-    "@types/react": "^18.0.35",
-    "@types/react-dom": "^18.0.11",
-    "eslint": "^8.38.0",
-    "eslint-config-prettier": "^8.8.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.8.8",
-    "rimraf": "^5.0.0",
-    "typescript": "^5.0.4"
+    "@remix-run/dev": "^2.2.0",
+    "@remix-run/eslint-config": "^2.2.0",
+    "@remix-run/serve": "^2.2.0",
+    "@types/react": "^18.2.36",
+    "@types/react-dom": "^18.2.14",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   },
   "engines": {
-    "node": ">=14"
-  }
+    "node": ">=21.1.0",
+    "pnpm": ">=8.10.2"
+  },
+  "packageManager": "pnpm@8.10.2"
 }

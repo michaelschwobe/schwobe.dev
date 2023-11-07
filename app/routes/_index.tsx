@@ -1,9 +1,8 @@
-import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
+import type { MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import clsx from 'clsx';
 import { findResume } from '~/models/resume.server';
-import resumeStylesUrl from '~/styles/resume.css';
 import {
   getDurationDateTime,
   getDurationFormatted,
@@ -15,20 +14,19 @@ export async function loader() {
   return json(resume);
 }
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
   const title = `${data?.fullName}, ${data?.jobTitle}`;
   const description = `Resume for ${data?.fullName}, a ${data?.jobTitle} based out of ${data?.addressLocality}, ${data?.addressRegion}.`;
   const author = data?.fullName;
   const url = data?.url;
   const domain = data?.url.replace('https://', '');
   const appName = data?.url.replace('https://', '');
-  const image = data?.url.concat('/og-image.jpg');
+  const image = data?.url.concat('/favicons/screenshot-wide.png');
   const imageWidth = '1200';
-  const imageHeight = '628';
+  const imageHeight = '630';
   const color = '#30838C';
-  const twitterUsername = data?.socials.find(
-    (el) => el.id === 'twitter',
-  )?.username;
+  const twitterUsername = data?.socials.find((el) => el.id === 'twitter')
+    ?.username;
   const creator = twitterUsername ? `@${twitterUsername}` : undefined;
 
   return [
@@ -62,71 +60,6 @@ export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
     { property: 'twitter:image', content: image },
   ];
 };
-
-export const links: LinksFunction = () => [
-  /* App / Icon */
-  {
-    rel: 'apple-touch-icon',
-    href: '/apple-touch-icon.png',
-    sizes: '180x180',
-  },
-  {
-    rel: 'icon',
-    href: '/favicon-32x32.png',
-    sizes: '32x32',
-    type: 'image/png',
-  },
-  {
-    rel: 'icon',
-    href: '/favicon-16x16.png',
-    sizes: '16x16',
-    type: 'image/png',
-  },
-  {
-    rel: 'manifest',
-    href: '/site.webmanifest',
-  },
-  {
-    rel: 'mask-icon',
-    href: '/safari-pinned-tab.svg',
-    color: '#30838C',
-  },
-
-  /* Stylesheets */
-  {
-    rel: 'stylesheet',
-    href: resumeStylesUrl,
-  },
-
-  /* Preloads */
-  {
-    rel: 'preload',
-    href: '/fonts/oswald-v48-latin-300.woff2',
-    as: 'font',
-    type: 'font/woff2',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/oswald-v48-latin-700.woff2',
-    as: 'font',
-    type: 'font/woff2',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/roboto-v30-latin-300.woff2',
-    as: 'font',
-    type: 'font/woff2',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'preload',
-    href: '/images/header.webp',
-    as: 'image',
-    type: 'image/webp',
-  },
-];
 
 export default function ResumePage() {
   const data = useLoaderData<typeof loader>();

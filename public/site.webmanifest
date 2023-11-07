@@ -1,21 +1,50 @@
 {
   "name": "Michael Schwobe",
   "short_name": "Schwobe.dev",
+  "description": "Resume site for Michael Schwobe",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#30838C",
+  "background_color": "#30838C",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#30838C",
-  "background_color": "#30838C",
-  "display": "standalone"
+  "screenshots": [
+    {
+      "src": "/favicons/screenshot-wide.png",
+      "type": "image/png",
+      "sizes": "1200x630",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/favicons/screenshot-narrow.png",
+      "type": "image/png",
+      "sizes": "1260x2400",
+      "form_factor": "narrow"
+    }
+  ]
 }

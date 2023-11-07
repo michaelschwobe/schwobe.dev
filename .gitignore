@@ -3,20 +3,25 @@
 # dependencies
 node_modules
 
+# lockfiles
+package-lock.json
+
 # testing
 /coverage
 
 # production
+/build
 /public/build
 
 # environment
 .env
+*.local
 
-# caches
+# cache
 /.cache
 
-# logs
-npm-debug.log*
+# debug
+*.log
 
 # server
 /.netlify
