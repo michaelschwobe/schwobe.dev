@@ -1,8 +1,7 @@
-import type { LinksFunction, V2_MetaFunction } from '@remix-run/node';
+import type { MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { findResume } from '~/models/resume.server';
-import resumeStylesUrl from '~/styles/resume.css';
 import { getDurationDateTime, getDurationHyphenated } from '~/utils/dates';
 
 export async function loader() {
@@ -10,68 +9,9 @@ export async function loader() {
   return json(resume);
 }
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{ title: 'Employment History' }];
 };
-
-export const links: LinksFunction = () => [
-  /* App / Icon */
-  {
-    rel: 'apple-touch-icon',
-    href: '/apple-touch-icon.png',
-    sizes: '180x180',
-  },
-  {
-    rel: 'icon',
-    href: '/favicon-32x32.png',
-    sizes: '32x32',
-    type: 'image/png',
-  },
-  {
-    rel: 'icon',
-    href: '/favicon-16x16.png',
-    sizes: '16x16',
-    type: 'image/png',
-  },
-  {
-    rel: 'manifest',
-    href: '/site.webmanifest',
-  },
-  {
-    rel: 'mask-icon',
-    href: '/safari-pinned-tab.svg',
-    color: '#30838C',
-  },
-
-  /* Stylesheets */
-  {
-    rel: 'stylesheet',
-    href: resumeStylesUrl,
-  },
-
-  /* Preloads */
-  {
-    rel: 'preload',
-    href: '/fonts/oswald-v48-latin-300.woff2',
-    as: 'font',
-    type: 'font/woff2',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/oswald-v48-latin-700.woff2',
-    as: 'font',
-    type: 'font/woff2',
-    crossOrigin: 'anonymous',
-  },
-  {
-    rel: 'preload',
-    href: '/fonts/roboto-v30-latin-300.woff2',
-    as: 'font',
-    type: 'font/woff2',
-    crossOrigin: 'anonymous',
-  },
-];
 
 export default function HistoryPage() {
   const data = useLoaderData<typeof loader>();

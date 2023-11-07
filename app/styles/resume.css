@@ -3,7 +3,9 @@
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 300;
-  src: local(''), url('/fonts/oswald-v48-latin-300.woff2') format('woff2');
+  src:
+    local(''),
+    url('/fonts/oswald-v48-latin-300.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,7 +13,9 @@
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 700;
-  src: local(''), url('/fonts/oswald-v48-latin-700.woff2') format('woff2');
+  src:
+    local(''),
+    url('/fonts/oswald-v48-latin-700.woff2') format('woff2');
 }
 
 @font-face {
@@ -19,7 +23,9 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: local(''), url('/fonts/roboto-v30-latin-300.woff2') format('woff2');
+  src:
+    local(''),
+    url('/fonts/roboto-v30-latin-300.woff2') format('woff2');
 }
 
 html {
@@ -40,7 +46,10 @@ body {
   margin: 0;
   color: #333;
   font-weight: 300;
-  font-family: Roboto, Helvetica Neue, sans-serif;
+  font-family:
+    Roboto,
+    Helvetica Neue,
+    sans-serif;
   font-style: normal;
   line-height: 1.618;
 }
@@ -83,7 +92,10 @@ summary {
   color: #000;
   font-weight: 300;
   font-size: inherit;
-  font-family: Oswald, Helvetica Neue, sans-serif;
+  font-family:
+    Oswald,
+    Helvetica Neue,
+    sans-serif;
   font-style: normal;
   line-height: 1;
   text-transform: uppercase;
@@ -447,6 +459,7 @@ th {
   cursor: pointer;
   transition: all 0.1s linear;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .portfolio-list a,
@@ -528,7 +541,10 @@ th {
   font-weight: 300;
   font-size: inherit;
   font-size: 11vmin;
-  font-family: Oswald, Helvetica Neue, sans-serif;
+  font-family:
+    Oswald,
+    Helvetica Neue,
+    sans-serif;
   font-style: normal;
   line-height: 1;
   text-align: right;
@@ -579,7 +595,10 @@ th {
   font-weight: 300;
   font-size: inherit;
   font-size: 1.333em;
-  font-family: Oswald, Helvetica Neue, sans-serif;
+  font-family:
+    Oswald,
+    Helvetica Neue,
+    sans-serif;
   font-style: normal;
   line-height: 1;
   line-height: 1.3;

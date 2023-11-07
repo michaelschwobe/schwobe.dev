@@ -1,17 +1,13 @@
 [build]
-  command = "remix build"
+  command = "pnpm run build"
   publish = "public"
 
 [dev]
-  command = "remix watch"
-  port = 3000
+  command = "pnpm run dev"
+  targetPort = 3000
 
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
-
+# Set immutable caching for static files, because they have fingerprinted filenames
 [[headers]]
   for = "/build/*"
   [headers.values]
-    "Cache-Control" = "public, max-age=31536000, immutable"
+    "Cache-Control" = "public, max-age=31560000, immutable"
