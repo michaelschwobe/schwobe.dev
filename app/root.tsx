@@ -1,22 +1,14 @@
-import { cssBundleHref } from '@remix-run/css-bundle';
 import type { LinksFunction } from '@remix-run/node';
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
-import resumeStylesUrl from '~/styles/resume.css';
+import styles from '~/global.css?url';
 
 export const links: LinksFunction = () => [
-  /* styles (preloaded) */
-  { rel: 'preload', href: resumeStylesUrl, as: 'style' },
-  ...(cssBundleHref
-    ? [{ rel: 'preload', href: cssBundleHref, as: 'style' }]
-    : []),
-
   /* fonts (preloaded) */
   {
     rel: 'preload',
@@ -70,8 +62,7 @@ export const links: LinksFunction = () => [
   },
 
   /* styles */
-  { rel: 'stylesheet', href: resumeStylesUrl },
-  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+  { rel: 'stylesheet', href: styles },
 ];
 
 export default function App() {
@@ -94,7 +85,6 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
