@@ -39,7 +39,7 @@ export interface Resume {
       description: string;
       type: 'Contract' | 'Salaried' | 'Self-employed';
       status: 'Full-time' | 'Part-time';
-      location: 'Onsite' | 'Remote';
+      location: 'Hybrid' | 'Onsite' | 'Remote';
       duration: [string, string | undefined];
       highlights?: string[];
       clients?: string[];
@@ -100,7 +100,7 @@ const resume = {
     {
       title: 'Career',
       description:
-        'With over 17 years of experience spanning fine art, graphic design, web design, and web development, I have built up a uniquely diverse skill set that distinguishes me from other developers. My educational background and enthusiasm for emerging technologies have enabled me to solve problems in innovative ways and create enhanced experiences for both developers and end users.',
+        'With over 18 years of experience spanning fine art, graphic design, web design, and web development, I have built up a uniquely diverse skill set that distinguishes me from other developers. My educational background and enthusiasm for emerging technologies have enabled me to solve problems in innovative ways and create enhanced experiences for both developers and end users.',
     },
     {
       title: 'Hobbies',
@@ -209,6 +209,31 @@ const resume = {
     ],
   },
   experiences: [
+    {
+      employer: {
+        name: 'RW Baird',
+        streetAddress: '777 E Wisconsin Ave',
+        addressLocality: 'Milwaukee',
+        addressRegion: 'WI',
+        postalCode: '53202',
+        telephone: '(800) 792-2473',
+        url: 'https://www.RWBaird.com/',
+      },
+      employee: {
+        title: 'Senior React Engineer',
+        description:
+          'Developed and maintained a suite of financial applications and design systems.',
+        type: 'Contract',
+        status: 'Full-time',
+        location: 'Hybrid',
+        duration: ['2024-03-04', undefined],
+        highlights: [
+          'Collaborated closely with a designer to establish a new design system. (Figma, React, Storybook, Tailwind CSS, and TypeScript)',
+          'Rewrote their client-facing financial management portal to deliver a cleaner, faster, and more accessible user experience. (Azure cloud infrastructure, Next.js, .NET/SQL powered REST API).',
+          'Pair-programmed frequently with .NET specialized backend developers and Flutter focused mobile app developers.',
+        ],
+      },
+    },
     {
       employer: {
         name: 'Thrivent',
