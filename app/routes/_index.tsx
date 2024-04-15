@@ -3,11 +3,7 @@ import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import clsx from 'clsx';
 import { findResume } from '~/models/resume.server';
-import {
-  getDurationDateTime,
-  getDurationFormatted,
-  getDurationHyphenated,
-} from '~/utils/dates';
+import { toEmployeeDuration, toStudentDuration } from '~/utils/dates';
 
 export async function loader() {
   const resume = await findResume();
@@ -67,7 +63,7 @@ export default function ResumePage() {
 
   return (
     <>
-      <header className="header" role="banner">
+      <header className="header">
         <div className="container">
           <h1 className="site-title">{data.fullName}</h1>
           <p className="site-description">{data.jobTitle}</p>
@@ -98,21 +94,18 @@ export default function ResumePage() {
             </h2>
 
             {data.experiences.map((el) => {
-              const durationDateTime = getDurationDateTime(
+              const { dateTime, time } = toEmployeeDuration(
                 el.employee.duration,
               );
               return (
-                <div className="job" key={durationDateTime}>
+                <div className="job" key={time}>
                   <div className="row">
                     <div
                       className={el.employee.clients ? 'col-md-6' : 'col-md-12'}
                     >
                       <h3 className="job-title">{el.employee.title}</h3>
                       <div className="job-duration">
-                        <time dateTime={durationDateTime}>
-                          {getDurationHyphenated(durationDateTime)} (
-                          {getDurationFormatted(durationDateTime)})
-                        </time>
+                        <time dateTime={dateTime}>{time}</time>
                       </div>
                       <div className="job-location">
                         {el.employer.url ? (
@@ -173,18 +166,17 @@ export default function ResumePage() {
               <span>Education</span>
             </h2>
             {data.educations.map((el) => {
-              const durationDateTime = getDurationDateTime(el.student.duration);
+              const { dateTime, time } = toStudentDuration(el.student.duration);
               return (
-                <div className="school" key={durationDateTime}>
+                <div className="school" key={time}>
                   <h3 className="school-title">
                     {el.student.degrees} &mdash;{' '}
                     <span className="avoid-break">
                       {el.student.emphasis.join(', ')}
                     </span>
                   </h3>
-
-                  <time className="school-duration" dateTime={durationDateTime}>
-                    {getDurationHyphenated(durationDateTime)}
+                  <time className="school-duration" dateTime={dateTime}>
+                    {time}
                   </time>
                   <div className="school-location">
                     {el.institution.url ? (
@@ -233,7 +225,7 @@ export default function ResumePage() {
         </section>
       </main>
 
-      <footer className="footer" role="contentinfo">
+      <footer className="footer">
         <div className="container">
           <div
             id={`${data.givenName}-${data.familyName}`}

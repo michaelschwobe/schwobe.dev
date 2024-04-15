@@ -2,7 +2,7 @@ import type { MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { findResume } from '~/models/resume.server';
-import { getDurationDateTime, getDurationHyphenated } from '~/utils/dates';
+import { toEmployeeDurationAlt } from '~/utils/dates';
 
 export async function loader() {
   const resume = await findResume();
@@ -18,7 +18,7 @@ export default function HistoryPage() {
 
   return (
     <>
-      <main className="main" role="main">
+      <main className="main">
         <section className="section section-1">
           <div className="container">
             <h2 className="section-title">
@@ -26,11 +26,11 @@ export default function HistoryPage() {
             </h2>
 
             {data.experiences.map((el) => {
-              const durationDateTime = getDurationDateTime(
+              const { dateTime, time } = toEmployeeDurationAlt(
                 el.employee.duration,
               );
               return (
-                <div className="job" key={durationDateTime}>
+                <div className="job" key={time}>
                   <div className="row">
                     <div className="col-md-12">
                       <table>
@@ -56,11 +56,7 @@ export default function HistoryPage() {
                           <tr>
                             <th>Dates</th>
                             <td>
-                              <time dateTime={durationDateTime}>
-                                {getDurationHyphenated(durationDateTime, true)
-                                  .split('–')
-                                  .join(' to ')}
-                              </time>{' '}
+                              <time dateTime={dateTime}>{time}</time>
                             </td>
                           </tr>
                           <tr>

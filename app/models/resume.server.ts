@@ -652,7 +652,7 @@ const resume = {
         degrees: ['Bachelor of Fine Arts'],
         majors: ['Art'],
         emphasis: ['Drawing', 'Painting', 'Graphic Design'],
-        duration: ['1996-09', '2005-12'],
+        duration: ['1996-09-04', '2005-12-23'],
       },
     },
   ],
