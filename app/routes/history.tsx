@@ -2,7 +2,7 @@ import type { MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { findResume } from '~/models/resume.server';
-import { toEmployeeDurationAlt } from '~/utils/dates';
+import { formatTime } from '~/utils/dates';
 
 export async function loader() {
   const resume = await findResume();
@@ -26,11 +26,21 @@ export default function HistoryPage() {
             </h2>
 
             {data.experiences.map((el) => {
-              const { dateTime, time } = toEmployeeDurationAlt(
-                el.employee.duration,
-              );
+              const times = formatTime({
+                datesUnformatted: el.employee.duration,
+                referenceDate: new Date(),
+                formatStrIn: 'yyyy-MM-dd',
+                formatStrOut: 'PPP',
+              });
               return (
-                <div className="job" key={time}>
+                <div
+                  className="job"
+                  key={
+                    times.dateStartUnformatted +
+                    times.dateEndUnformatted +
+                    el.employer.name
+                  }
+                >
                   <div className="row">
                     <div className="col-md-12">
                       <table>
@@ -56,7 +66,8 @@ export default function HistoryPage() {
                           <tr>
                             <th>Dates</th>
                             <td>
-                              <time dateTime={dateTime}>{time}</time>
+                              {times.dateStartFormatted} to{' '}
+                              {times.dateEndFormatted}
                             </td>
                           </tr>
                           <tr>

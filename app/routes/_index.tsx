@@ -3,7 +3,7 @@ import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import clsx from 'clsx';
 import { findResume } from '~/models/resume.server';
-import { toEmployeeDuration, toStudentDuration } from '~/utils/dates';
+import { formatTime } from '~/utils/dates';
 
 export async function loader() {
   const resume = await findResume();
@@ -70,7 +70,7 @@ export default function ResumePage() {
         </div>
       </header>
 
-      <main className="main" role="main">
+      <main className="main">
         <section className="section section-1">
           <div className="container">
             <h2 className="section-title">
@@ -94,18 +94,41 @@ export default function ResumePage() {
             </h2>
 
             {data.experiences.map((el) => {
-              const { dateTime, time } = toEmployeeDuration(
-                el.employee.duration,
-              );
+              const times = formatTime({
+                datesUnformatted: el.employee.duration,
+                referenceDate: new Date(),
+                formatStrIn: 'yyyy-MM-dd',
+                formatStrOut: 'MMM yyyy',
+              });
               return (
-                <div className="job" key={time}>
+                <div
+                  className="job"
+                  key={
+                    times.dateStartUnformatted +
+                    times.dateEndUnformatted +
+                    el.employer.name
+                  }
+                >
                   <div className="row">
                     <div
                       className={el.employee.clients ? 'col-md-6' : 'col-md-12'}
                     >
                       <h3 className="job-title">{el.employee.title}</h3>
                       <div className="job-duration">
-                        <time dateTime={dateTime}>{time}</time>
+                        <time dateTime={times.dateStartUnformatted}>
+                          {times.dateStartFormatted}
+                        </time>
+                        &ndash;
+                        <time
+                          dateTime={times.dateEndUnformatted}
+                          className={
+                            times.dateEndIsPresent ? 'sr-only' : undefined
+                          }
+                        >
+                          {times.dateEndFormatted}
+                        </time>
+                        {times.dateEndIsPresent ? 'Present' : null} (
+                        {times.durationFormatted})
                       </div>
                       <div className="job-location">
                         {el.employer.url ? (
@@ -166,18 +189,36 @@ export default function ResumePage() {
               <span>Education</span>
             </h2>
             {data.educations.map((el) => {
-              const { dateTime, time } = toStudentDuration(el.student.duration);
+              const times = formatTime({
+                datesUnformatted: el.student.duration,
+                referenceDate: new Date(),
+                formatStrIn: 'yyyy-MM-dd',
+                formatStrOut: 'MMM yyyy',
+              });
               return (
-                <div className="school" key={time}>
+                <div
+                  className="school"
+                  key={
+                    times.dateStartUnformatted +
+                    times.dateEndUnformatted +
+                    el.institution.name
+                  }
+                >
                   <h3 className="school-title">
                     {el.student.degrees} &mdash;{' '}
                     <span className="avoid-break">
                       {el.student.emphasis.join(', ')}
                     </span>
                   </h3>
-                  <time className="school-duration" dateTime={dateTime}>
-                    {time}
-                  </time>
+                  <span className="school-duration">
+                    <time dateTime={times.dateStartUnformatted}>
+                      {times.dateStartFormatted}
+                    </time>
+                    &ndash;
+                    <time dateTime={times.dateEndUnformatted}>
+                      {times.dateEndFormatted}
+                    </time>
+                  </span>
                   <div className="school-location">
                     {el.institution.url ? (
                       <a href={el.institution.url}>{el.institution.name}</a>
