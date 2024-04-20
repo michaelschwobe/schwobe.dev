@@ -91,7 +91,7 @@ const resume = {
     },
     {
       id: 'twitter',
-      name: 'Twitter',
+      name: 'X (Twitter)',
       url: 'https://twitter.com/michael_schwobe',
       username: 'michael_schwobe',
     },
