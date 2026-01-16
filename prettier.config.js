@@ -1,0 +1,53 @@
+// @ts-check
+
+/**
+ * @see https://prettier.io/docs/en/configuration
+ * @typedef {import("prettier").Config} PrettierConfig
+ * @typedef {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} SortImportsConfig
+ * @typedef {PrettierConfig & SortImportsConfig} Config
+ * @type {Config}
+ */
+const config = {
+  plugins: [
+    "@prettier/plugin-oxc",
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-packagejson",
+  ],
+
+  // Settings for: @ianvs/prettier-plugin-sort-imports
+  importOrder: [
+    // Enforce a blank line after top of file comments
+    // and add spaces between import groups with: ""
+    "",
+    // Node.js built-in modules
+    "<BUILTIN_MODULES>",
+    // Third party modules
+    "<THIRD_PARTY_MODULES>",
+    // Custom aliased modules
+    "^(#src)(/.*)$",
+    // Relative Non-CSS modules
+    "^(?!.*[.]css$)[./].*$",
+    "",
+    // Relative CSS modules
+    "\\.css$",
+  ],
+  importOrderTypeScriptVersion: "5.9.2",
+
+  overrides: [
+    {
+      files: ["**/*.mdx"],
+      options: {
+        htmlWhitespaceSensitivity: "ignore",
+        proseWrap: "preserve",
+      },
+    },
+    {
+      files: ["**/*.svg"],
+      options: {
+        parser: "html",
+      },
+    },
+  ],
+};
+
+export default config;

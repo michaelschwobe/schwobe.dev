@@ -1,0 +1,16 @@
+{
+  "biome.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.prettier": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "prettier.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "tailwindCSS.classFunctions": ["tv"],
+  "tailwindCSS.emmetCompletions": true,
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}

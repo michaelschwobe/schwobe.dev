@@ -1,15 +1,11 @@
-# dependencies
-node_modules
+# See https://prettier.io/docs/en/ignore for more about ignoring files.
 
 # lockfiles
 pnpm-*.yaml
 
-# production
-/build
-/public/build
+# netlify
+.netlify
 
-# cache
-/.cache
-
-# server
-/.netlify
+# react-router
+**/build
+**/public

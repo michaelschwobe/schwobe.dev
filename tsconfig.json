@@ -1,46 +1,34 @@
 {
-  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", "netlify-edge-plugin.ts"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "App",
+
+  "extends": "./tsconfig.base.json",
+
+  "include": [
+    "**/*",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*",
+    "reset.d.ts"
+  ],
+
   "compilerOptions": {
+    /* Projects */
+    "tsBuildInfoFile": "./node_modules/.cache/tsconfig.app.tsbuildinfo",
+
+    /* Language and Environment */
     "target": "ES2022",
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
 
+    /* Modules */
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
+    "rootDirs": [".", "./.react-router/types"],
+    "types": ["node", "vite/client"],
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
-    },
-    "resolveJsonModule": true,
-
-    "allowJs": true,
-
-    "noEmit": true,
-
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "useUnknownInCatchVariables": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "allowUnusedLabels": false,
-    "allowUnreachableCode": false,
-
-    "skipLibCheck": true
+      "#app/*": ["./app/*"]
+    }
   }
 }

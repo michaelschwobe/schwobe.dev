@@ -4,7 +4,7 @@ import {
   intervalToDuration,
   parse,
   type Duration,
-} from 'date-fns';
+} from "date-fns";
 
 export function formatTime({
   datesUnformatted,
@@ -37,8 +37,8 @@ export function formatTime({
   const durationCeiling = { years, months: monthsCeil } as Duration;
 
   const durationFormatted = formatDuration(durationCeiling, {
-    delimiter: ', ',
-    format: ['years', 'months'],
+    delimiter: ", ",
+    format: ["years", "months"],
   });
 
   return {

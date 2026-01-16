@@ -1,23 +1,17 @@
-import type { MetaFunction } from '@remix-run/node';
-import { json } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
-import { findResume } from '~/models/resume.server';
-import { formatTime } from '~/utils/dates';
+import { findResume } from "#app/models/resume.server";
+import { formatTime } from "#app/utils/dates";
+import type { Route } from "./+types/history";
 
 export async function loader() {
   const resume = await findResume();
-  return json(resume);
+  return resume;
 }
 
-export const meta: MetaFunction = () => {
-  return [{ title: 'Employment History' }];
-};
-
-export default function HistoryPage() {
-  const data = useLoaderData<typeof loader>();
-
+export default function HistoryPage({ loaderData }: Route.ComponentProps) {
   return (
     <>
+      <title>Employment History</title>
+
       <main className="main">
         <section className="section section-1">
           <div className="container">
@@ -25,12 +19,12 @@ export default function HistoryPage() {
               <span>Employment History</span>
             </h2>
 
-            {data.experiences.map((el) => {
+            {loaderData.experiences.map((el) => {
               const times = formatTime({
                 datesUnformatted: el.employee.duration,
                 referenceDate: new Date(),
-                formatStrIn: 'yyyy-MM-dd',
-                formatStrOut: 'PPP',
+                formatStrIn: "yyyy-MM-dd",
+                formatStrOut: "PPP",
               });
               return (
                 <div
@@ -60,13 +54,13 @@ export default function HistoryPage() {
                                 el.employee.type,
                                 el.employee.status,
                                 el.employee.location,
-                              ].join(' / ')}
+                              ].join(" / ")}
                             </td>
                           </tr>
                           <tr>
                             <th>Dates</th>
                             <td>
-                              {times.dateStartFormatted} to{' '}
+                              {times.dateStartFormatted} to{" "}
                               {times.dateEndFormatted}
                             </td>
                           </tr>
@@ -77,7 +71,7 @@ export default function HistoryPage() {
                                 el.employer.streetAddress,
                                 el.employer.addressLocality,
                                 el.employer.addressRegion,
-                              ].join(', ')}{' '}
+                              ].join(", ")}{" "}
                               {el.employer.postalCode}
                             </td>
                           </tr>
@@ -86,7 +80,7 @@ export default function HistoryPage() {
                             <td>
                               {el.employer.telephone
                                 ? el.employer.telephone
-                                : 'N/A'}
+                                : "N/A"}
                             </td>
                           </tr>
                           <tr>
@@ -95,7 +89,7 @@ export default function HistoryPage() {
                               {el.employer.url ? (
                                 <a href={el.employer.url}>{el.employer.url}</a>
                               ) : (
-                                'N/A'
+                                "N/A"
                               )}
                             </td>
                           </tr>

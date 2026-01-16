@@ -1,31 +1,31 @@
 @font-face {
   font-display: swap;
-  font-family: 'Oswald';
+  font-family: "Oswald";
   font-style: normal;
   font-weight: 300;
   src:
-    local(''),
-    url('/fonts/oswald-v48-latin-300.woff2') format('woff2');
+    local(""),
+    url("/fonts/oswald-v48-latin-300.woff2") format("woff2");
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Oswald';
+  font-family: "Oswald";
   font-style: normal;
   font-weight: 700;
   src:
-    local(''),
-    url('/fonts/oswald-v48-latin-700.woff2') format('woff2');
+    local(""),
+    url("/fonts/oswald-v48-latin-700.woff2") format("woff2");
 }
 
 @font-face {
   font-display: swap;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   src:
-    local(''),
-    url('/fonts/roboto-v30-latin-300.woff2') format('woff2');
+    local(""),
+    url("/fonts/roboto-v30-latin-300.woff2") format("woff2");
 }
 
 html {
@@ -212,10 +212,10 @@ th {
   position: absolute;
   top: 0;
   right: 0;
-  content: '';
+  content: "";
 }
 
-[class*='css-icon'] {
+[class*="css-icon"] {
   position: relative;
   top: -0.1em;
   display: inline-block;
@@ -239,7 +239,7 @@ th {
     margin-left: -40px;
   }
 
-  [class*='col-'] {
+  [class*="col-"] {
     flex: 0 0 auto;
     padding-right: 40px;
     padding-left: 40px;
@@ -271,7 +271,7 @@ th {
   position: absolute;
   top: 0;
   left: 0;
-  content: '';
+  content: "";
 }
 
 .section-1 {
@@ -505,7 +505,8 @@ th {
   color: #fff9db;
   background: #30838c;
   background-image: url(/images/header.webp);
-  background-image: url(/images/header.webp),
+  background-image:
+    url(/images/header.webp),
     radial-gradient(
       ellipse farthest-corner at 55% 45%,
       #f7eec3,
@@ -526,7 +527,7 @@ th {
   height: 0;
   border-bottom: 60px solid #fff;
   border-left: 100vw solid transparent;
-  content: '';
+  content: "";
 }
 
 .site-title {
@@ -576,7 +577,7 @@ th {
   height: 0;
   border-top: 60px solid #f3f2ed;
   border-left: 100vw solid transparent;
-  content: '';
+  content: "";
 }
 
 .footer a,
@@ -766,7 +767,7 @@ th {
 
   .job-clients-list li::after,
   .skills-list li::after {
-    content: ',';
+    content: ",";
   }
 
   .job-clients-list li:last-child::after,
@@ -783,7 +784,7 @@ th {
   }
 
   .portfolio-list li::after {
-    content: ',';
+    content: ",";
   }
 
   .portfolio-list li:last-child::after {
@@ -821,6 +822,6 @@ th {
   }
 
   .social-icon::before {
-    content: ' (' attr(href) ')';
+    content: " (" attr(href) ")";
   }
 }
